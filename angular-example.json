@@ -1,0 +1,14 @@
+[
+    {
+        "details": {
+            "mode": "tab",
+            "name": "angular_example",
+            "url": "http://localhost:4200"
+        },
+        "ignoreSaveOnClose": true,
+        "name": "Angular_Example",
+        "title": "Angular Example",
+        "caption": "Angular Example",
+        "type": "window"
+    }
+]
