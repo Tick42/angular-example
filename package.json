@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
+    "serve": "node_modules\\.bin\\ng serve",
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
@@ -23,7 +24,6 @@
     "@angular/router": "^4.2.4",
     "core-js": "^2.4.1",
     "rxjs": "^5.4.2",
-    "tick42-glue": "^4.4.1",
     "zone.js": "^0.8.14"
   },
   "devDependencies": {

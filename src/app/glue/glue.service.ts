@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import Glue, { Glue42 } from 'tick42-glue';
+import Glue, { Glue42 } from '../../../lib/tick42-glue';
 import { MethodDefinition, Instance } from './types';
 
 @Injectable()

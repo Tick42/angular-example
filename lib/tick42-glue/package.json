@@ -1,0 +1,92 @@
+{
+  "_from": "tick42-glue@4.4.1",
+  "_id": "tick42-glue@4.4.1",
+  "_inBundle": false,
+  "_integrity": "sha1-quArTsepXoCEDdrBFZZCw9BlV/Q=",
+  "_location": "/tick42-glue",
+  "_phantomChildren": {
+    "bufferutil": "1.1.0",
+    "utf-8-validate": "1.1.0"
+  },
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "tick42-glue@4.4.1",
+    "name": "tick42-glue",
+    "escapedName": "tick42-glue",
+    "rawSpec": "4.4.1",
+    "saveSpec": null,
+    "fetchSpec": "4.4.1"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://repo.tick42.com:443/api/npm/tick42-npm/tick42-glue/-/tick42-glue-4.4.1.tgz",
+  "_shasum": "aae02b4ec7a95e80840ddac1159642c3d06557f4",
+  "_spec": "tick42-glue@4.4.1",
+  "_where": "D:\\temp",
+  "author": {
+    "name": "Tick42",
+    "url": "http://www.glue42.com"
+  },
+  "browser": "./dist/web/tick42-glue.js",
+  "bundleDependencies": [
+    "tick42-glue-core",
+    "tick42-promisify",
+    "callback-registry"
+  ],
+  "dependencies": {
+    "callback-registry": "2.5.1",
+    "es6-promise": "^4.1.1",
+    "object-assign": "^4.1.1",
+    "shortid": "^2.2.8",
+    "tick42-glue-core": "^4.3.7",
+    "tick42-promisify": "1.0.3"
+  },
+  "deprecated": false,
+  "description": "Tick42 GLUE",
+  "devDependencies": {
+    "@types/node": "^10.7.1",
+    "@types/object-assign": "^4.0.30",
+    "@types/shortid": "0.0.29",
+    "chai": "^4.1.0",
+    "glue-js-documentation-builder": "*",
+    "mocha": "^2.4.5",
+    "onchange": "3.*",
+    "pre-commit": "^1.1.3",
+    "readline-sync": "^1.4.5",
+    "shelljs": "^0.6.0",
+    "tick42-gateway": "0.2.7",
+    "tick42-webpack-config": "4.1.6",
+    "tslint": "^5.5.0",
+    "typescript": "^3.0.1",
+    "webpack": "2.3.3"
+  },
+  "docName": "Glue",
+  "license": "ISC",
+  "main": "./dist/node/tick42-glue.js",
+  "name": "tick42-glue",
+  "repository": {
+    "type": "git",
+    "url": "https://stash.tick42.com:8443/scm/ofgw/js-glue.git"
+  },
+  "scripts": {
+    "build:dev": "npm run tslint && npm run pre:build && set NODE_ENV=development && webpack && npm run file-versionify",
+    "build:prod": "npm run pre:build && set NODE_ENV=development && webpack && set NODE_ENV=production && webpack && npm run file-versionify",
+    "clean": "node ./build/scripts/clean.js",
+    "file-versionify": "node ./build/scripts/file-versionify.js",
+    "generate-docs": "glue-js-documentation-builder build-reference --project g4e -q reference --modules ./glue.d.ts,./node_modules/tick42-glue-core/glue.d.ts",
+    "init-dev-mode": "node ./build/scripts/init-dev-mode.js",
+    "pre:build": "npm run tslint && tsc && set NODE_ENV=development && npm run clean",
+    "prepublish": "npm run build:prod && npm run test:only",
+    "remove-installed-dependencies": "node ./build/scripts/remove-installed-dependencies.js",
+    "test": "npm run build:dev && mocha ./tests",
+    "test:only": "mocha ./tests",
+    "tslint": "tslint -t codeFrame ./src/**/*.ts",
+    "tslint:fix": "tslint -t codeFrame --fix ./src/**/*.ts",
+    "watch": "onchange ./src/**/*.ts -- npm run build:dev"
+  },
+  "types": "./glue.d.ts",
+  "version": "4.4.1"
+}
