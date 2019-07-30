@@ -49,7 +49,7 @@ export class GlueService {
 
     public fetchInstrument(): Promise<void> {
         const randomEndIndex: number = Math.floor(Math.random() * Math.floor(this.portfolioInstrumentsList.length));
-        return this.updateContext('ric', this.portfolioInstrumentsList[randomEndIndex]);
+        return this.updateContext('portfolio', this.portfolioInstrumentsList[randomEndIndex]);
     }
 
     public getRandomInstrumentsList(): Instrument[] {
